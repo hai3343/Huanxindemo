@@ -1,0 +1,13 @@
+PODS:
+  - HyphenateFullSDK (3.1.4)
+  - Masonry (1.0.1)
+
+DEPENDENCIES:
+  - HyphenateFullSDK
+  - Masonry
+
+SPEC CHECKSUMS:
+  HyphenateFullSDK: 0640f9710da83da7a08928f074da718ed3368277
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+
+COCOAPODS: 0.39.0
