@@ -24,4 +24,7 @@
 #import "EMSDKFull.h"
 #import "EaseUI.h"
 
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+
 #endif

@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  LoginController.h
 //  Huanxindemo
 //
-//  Created by happying on 16/8/8.
+//  Created by happying on 16/8/9.
 //  Copyright © 2016年 jzg. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface LoginController : UIViewController
 
 @end
-

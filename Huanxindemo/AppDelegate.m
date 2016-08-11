@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import <EMSDK.h>
 #import "EaseSDKHelper.h"
-#import "AppDelegate+EaseMob.h"
 #import "EaseUI.h"
+#import "LoginController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,31 +21,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
    
-    [self easemobApplication:application
-                      didFinishLaunchingWithOptions:launchOptions
-                                             appkey:@"douser#istore"
-                                       apnsCertName:@"istore_dev"
-                                        otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
     
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    self.window.rootViewController = [[LoginController alloc] init];
+    
+    [self.window makeKeyAndVisible];
     //AppKey:注册的AppKey，详细见下面注释。
     //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
     EMOptions *options = [EMOptions optionsWithAppkey:@"304375986-hb#taozhubao"];
     options.apnsCertName = @"happyinghu";
     [[EMClient sharedClient] initializeSDKWithOptions:options];
     
-    //注册
-    EMError *error = [[EMClient sharedClient] registerWithUsername:@"8001" password:@"111111"];
-    if (error==nil) {
-        NSLog(@"注册成功");
-    }
-    //登录
-//    EMError *error = [[EMClient sharedClient] loginWithUsername:@"8001" password:@"111111"];
-    if (!error) {
-        NSLog(@"登录成功");
-        //自动登录
-        [[EMClient sharedClient].options setIsAutoLogin:YES];
-    }
+    
     return YES;
 }
 
